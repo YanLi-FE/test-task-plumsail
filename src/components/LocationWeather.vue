@@ -92,8 +92,8 @@ const weatherVisibility = computed(() => {
 	}
 
 	&__temperature {
-		display: grid;
-		place-items: center;
+		display: flex;
+		align-items: center;
 		font-size: 36px;
 		font-weight: bold;
 	}
