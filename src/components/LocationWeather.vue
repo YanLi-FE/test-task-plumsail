@@ -13,14 +13,14 @@ const weatherDescription = computed(() => {
 	const description = props.weather.weather[0].description;
 	return description[0].toUpperCase() + description.slice(1);
 });
-const weatherTemperature = computed(() => `${Math.round(props.weather.main.temp)}°C`);
-const weatherFeelsLike = computed(() => `${Math.round(props.weather.main.feels_like)}°C`);
+const weatherTemperature = computed(() => `${Math.round(props.weather.main.temp)}° C`);
+const weatherFeelsLike = computed(() => `${Math.round(props.weather.main.feels_like)}° C`);
 const weatherDirections = [
 		'N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE',
 		'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW',
 		'N',
 ];
-const weatherWindSpeed = computed(() => `${props.weather.wind.speed}m/s`);
+const weatherWindSpeed = computed(() => `${props.weather.wind.speed} m/s`);
 const weatherWindDirection = computed(() => {
 	const direction = props.weather.wind.deg;
 	const index = Math.floor((direction + 11.25) / 22.5);
@@ -29,9 +29,9 @@ const weatherWindDirection = computed(() => {
 const weatherVisibility = computed(() => {
 	const distance = props.weather.visibility;
 	if (distance < 1000) {
-		return `${distance}m`;
+		return `${distance} m`;
 	} else {
-		return `${(distance / 1000).toFixed(1)}km`;
+		return `${(distance / 1000).toFixed(1)} km`;
 	}
 });
 </script>
@@ -55,7 +55,7 @@ const weatherVisibility = computed(() => {
 		</div>
 		<div class="weather-widget__additional-info">
 			<i class="material-symbols-outlined">compress</i>
-			{{ weather.main.pressure }}hPa
+			{{ weather.main.pressure }} hPa
 		</div>
 		<div class="weather-widget__additional-info">
 			Humidity: {{ weather.main.humidity }}%
