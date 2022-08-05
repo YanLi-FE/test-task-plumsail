@@ -18,8 +18,12 @@ defineProps<{
 	border-radius: 6px;
 	padding: 6px;
 
-	&:hover {
+	&:hover:not(:disabled) {
 		background-color: #f5f5f5;
+	}
+
+	&:disabled {
+		cursor: auto;
 	}
 }
 </style>

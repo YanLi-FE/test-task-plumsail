@@ -5,6 +5,7 @@ import {computed} from "vue";
 
 const props = defineProps<{
 	location: ApiLocationLookupResponseObject;
+	isInactive?: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -25,9 +26,17 @@ const deleteLocation = () => {
 
 <template>
 	<div class="weather-widget__location">
-		<IconButton class="weather-widget__location-drag-button" icon="menu" />
+		<IconButton
+				:disabled="isInactive"
+				class="weather-widget__location-drag-button"
+				icon="menu"
+		/>
 		<span>{{ fullName }}</span>
-		<IconButton icon="delete" @click="deleteLocation" />
+		<IconButton
+				:disabled="isInactive"
+				icon="delete"
+				@click="deleteLocation"
+		/>
 	</div>
 </template>
 

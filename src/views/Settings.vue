@@ -62,8 +62,9 @@ function getLocationKey(location: ApiLocationLookupResponseObject): string {
 		>
 			<template #item="{ element, index }">
 				<LocationInSettings
-					:location="element"
-					@delete="deleteLocation(index)"
+						:is-inactive="isLoading"
+						:location="element"
+						@delete="deleteLocation(index)"
 				/>
 			</template>
 		</Draggable>
